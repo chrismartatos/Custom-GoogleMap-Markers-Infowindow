@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!--|  Brought To You By: <///:™  |-->     
+	<title>Customize Google Maps</title>                                                           
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1">
+	
+	<!--Google fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+	
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" media="all" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/main.css">
+	
+	<!--jQuery 1.11.1-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	
+	<!--Google Map-->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	
+</head>
+<body>
+
+<div id="page">
+
+<header id="header">
+	<a id="logo" href="http://www.chrismartatos.com" target="_blank"><img src="img/logo.png" width="100" alt="logo"></a>
+</header>
+
+<!--Hidden Mobile Nav-->
+<nav id="mobile-nav" class="hide">
+	<select name="mobile_locations" class="menu"></select>
+</nav>
+
+<!--Location Nav-->
+<nav id="locations-nav">
+	<h3>Contact Info & Directions</h3>
+	<div class="dropdown active">Coming from:</div>
+	<div class="menu"></div>
+</nav>
+
+<!--Map init-->
+<div id="google-map" class="contact-map"></div>
+
+<!--Hidden locations-->
+<div id="get-location" style="position:fixed; bottom:-9999px; left:-9999px;" data-menu="">
+
+	<!-- Location #1 -->
+	<article class="location" data-lat="37.935647" data-lng="23.948416" data-marker="img/marker.png">
+	  	<div class="get-address">
+		  <div class="wrap-header">
+		    <h2 class="title">1. Airport - Eleutherios Venizelos</h2>
+		 	<div class="body">
+			 	<p>From Eletherios Venizelos Airport you will have to catch a bus to Rafina Port ( approx. 30mins).</p>			
+			</div>
+		  </div>
+	    </div>
+	</article>
+	
+	<!-- Location #2 -->
+	<article class="location" data-lat="38.021357" data-lng="24.009124" data-marker="img/marker.png">
+	  	<div class="get-address">
+		  <div class="wrap-header">
+		    <h2 class="title">2. Rafina Port</h2>
+		    <div class="body">
+				<p>From Rafina Port you will have to take the boat to Andros which is (approx. 2hours).</p>
+			</div>
+		  </div>
+	    </div>
+	</article>
+	
+	<!-- Location #3 -->
+	<article class="location" data-lat="37.883508" data-lng="24.736204" data-marker="img/marker.png">
+	  	<div class="get-address">
+		  <div class="wrap-header">
+		    <h2 class="title">3. Andros Port - Gavrio</h2>
+		    <div class="body">
+		    	<p>From the port you will have to take again the bus all the way to Hora, which is (approx. 30 min).</p>
+		    </div>
+		  </div>
+	    </div>
+	</article>
+	
+	<!-- Location #4 -->
+	<article class="location" data-lat="37.844392" data-lng="24.934842" data-marker="img/marker.png">
+	  	<div class="get-address">
+		  <div class="wrap-header">
+		    <h2 class="title">4. Andros - Hora</h2>
+		    <div class="body">
+		    	<p>We got your back! You can call us and we can pick you up in order to give you a lift to our apartments (approx. 5 min).</p>
+		    </div>
+		  </div>
+	    </div>
+	</article>
+	
+	<!-- Location #5 -->
+	<article class="location" data-lat="37.850440" data-lng="24.909808" data-marker="img/marker.png">
+	  	<div class="get-address">
+		  <div class="wrap-header">
+		    <h2 class="title">5. BluEnigma</h2>
+		    <div class="body">
+		    	<p>Welcome to <strong>BLUENIGMA</strong>! We wish you a wonderful stay. Enjoy&#8230;</p>
+		    </div>
+		  </div>
+	    </div>
+	</article>
+
+</div>
+
+<footer id="footer" class="center-ul">
+	<ul>
+		<li><a href="index.html">Example 1</a></li>
+		<li><a href="index2.html">Example 2</a></li>
+	</ul>
+</footer>
+</div>
+
+
+
+<!--Main JS-->
+<script type="text/javascript" src="js/infobox.js"></script>
+<script type="text/javascript" src="js/google-markers-events.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+	
+</body>
+</html>
+
+
+
