@@ -7,7 +7,6 @@ $(function()
 });
 
 
-
 /*-------------------------------------------------------------------------
   Custom Google Map / infobox.js / googlemarkers.js / snazzymaps.com
 --------------------------------------------------------------------------*/
@@ -16,20 +15,20 @@ function locations_google_map()
    if($("#google-map").length)
    {
    		//Markers Array
-		var markers=[];
+		var markers=[],
 		
 		/* God bless: http://snazzymaps.com */
-		var map_style_array = [{"featureType":"water","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"landscape","stylers":[{"color":"#f2f2f2"}]},{"featureType":"road","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]}];
+		map_style_array = [{"featureType":"water","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"landscape","stylers":[{"color":"#f2f2f2"}]},{"featureType":"road","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]}],
 		
 		//target elements
-		var googleMap = $("#google-map"),
-	        locations_menu_wrap = $("#locations-nav"),
-	        locations_menu = $("#locations-nav .menu"),
-	        mobile_menu = $("#mobile-nav .menu"),
-	        target_location = $('#get-location .location'),
-	        _lat = 37.8503818, //Center Map lat
-	        _lng = 24.9112167, //Center Map lng
-	        _address = 'Apoikia, Andros Greece'; //Center Map address
+		googleMap = $("#google-map"),
+        locations_menu_wrap = $("#locations-nav"),
+        locations_menu = $("#locations-nav .menu"),
+        mobile_menu = $("#mobile-nav .menu"),
+        target_location = $('#get-location .location'),
+        _lat = 37.8503818, //Center Map lat
+        _lng = 24.9112167, //Center Map lng
+        _address = 'Apoikia, Andros Greece'; //Center Map address
 	    
 	    $.each(target_location, function(key, value) 
 	    {
@@ -43,7 +42,7 @@ function locations_google_map()
 	      });
 	    });
 	    
-	    //Set height first
+	    //Set height first - Use only if you needed - fullscreen map
 	    set_map_height(googleMap);
 	    
 	    //Trigger the map and place markers
@@ -71,16 +70,17 @@ function locations_google_map()
 	    {
 	        e.preventDefault();
 	        
-	        //Select map
+	        //Select loaction
 	        select_map_item($(this),googleMap);
 	    }); 
 	    
-	    //Change event for mobile
+	    //Change event for mobile nav
 	    mobile_menu.change(function()
 	    {
 	      	var target = $("option:selected", this);
 	      
-	        select_map_item(target);
+		  	//Select loaction
+	        select_map_item(target,googleMap);
 	    }); 
 	    
 	  }
@@ -97,7 +97,7 @@ function select_map_item(obj, googleMap)
   
   obj.addClass('active');
   
-  $("#google-map").googlemap('reposition', i, 14);
+  googleMap.googlemap('reposition', i, 14);
 } 
 
 //Set height

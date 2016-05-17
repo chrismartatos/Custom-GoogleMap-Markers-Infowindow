@@ -5,7 +5,6 @@
   var markInfoIndex = 0;
   var latlngbounds;
   var settings;
-  var dir = "img/";
   var markers = [];
 
   /*-----------------------------------------------------------------------------------------
@@ -40,6 +39,7 @@
         icon: icon,
         shadow: settings.shadowMarker
     });
+    
 	//console.log("Markers: "+icon);
     return marker;
   }
@@ -47,7 +47,7 @@
   /*-----------------------------------------------------------------------------------------
   					Customize Infobox fn - infobox.js
   ------------------------------------------------------------------------------------------*/
-  function custom_infobox_init(infoWindow,get_details,dir,map,marker)
+  function custom_infobox_init(infoWindow,get_details,map,marker)
   {    		 
   infoWindow = new InfoBox({
 		      content: "<div class='custom-info-window cf'>"+get_details+"<span class='arrow'></span></div>",   
@@ -64,7 +64,7 @@
 		        color: "#000"
 		      },
 		      closeBoxMargin: "0 0 0 0",
-		      closeBoxURL: dir+"close-icon.png",/*close-icon.png*/
+		      closeBoxURL: "img/close-icon.png",/*close-icon.png*/
 		      infoBoxClearance: new google.maps.Size(1, 1),
 		      isHidden: false,
 		      pane: "floatPane",
@@ -90,7 +90,7 @@
             /***ADD LISTENER****/
             google.maps.event.addListener(settings.markers[i].marker, 'mouseover', function()
 	        {	       
-	        	custom_infobox_init(infoWindow,settings.markers[i].details,dir,map,marker);	            
+	        	custom_infobox_init(infoWindow,settings.markers[i].details,map,marker);	            
 	        });
 	        
         }
@@ -113,7 +113,7 @@
                         /***ADD LISTENER****/
                         google.maps.event.addListener(settings.markers[i].marker, 'mouseover', function()
 				        {
-				            custom_infobox_init(infoWindow,settings.markers[i].details,dir,map,marker);
+				            custom_infobox_init(infoWindow,settings.markers[i].details,map,marker);
 				        });
                         
                     }
@@ -218,7 +218,7 @@
             {
                 map.setCenter(settings.markers[i].marker.position);
                 
-                custom_infobox_init(infoWindow,settings.markers[i].details,dir,map,settings.markers[i].marker);
+                custom_infobox_init(infoWindow,settings.markers[i].details,map,settings.markers[i].marker);
                 
             }
             else{
