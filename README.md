@@ -1,4 +1,10 @@
-Custom-GoogleMap-Markers-Infowindow
-===================================
+Custom GoogleMap Markers & InfoWindow
+=====================================
 
-Framework I use, to insert marker locations, customize infowindow, different markers, adding menu etc. Libraries used: google infobox.js, google maps API V3, jQuery
+Custom marker, customize infowindow, different markers, add navigation for map both mobile and desktop. 
+
+Libraries used: 
+
+• google infobox.js
+• google maps API V3
+• jQuery
