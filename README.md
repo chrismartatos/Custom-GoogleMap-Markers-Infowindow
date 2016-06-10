@@ -14,6 +14,6 @@ Custom marker, customize and style infowindow with CSS3 (Be creative using Trans
 Credits
 =========
 
-- Google infobox.js
-- Google Maps API V3
-- jQuery
+- Google infobox.js https://code.google.com/p/google-maps-utility-library-v3/source/browse/trunk/infobox/src/infobox.js
+- Google Maps API V3 https://developers.google.com/maps/documentation/javascript/
+- jQuery 
