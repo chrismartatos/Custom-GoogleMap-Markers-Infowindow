@@ -1,10 +1,11 @@
 Custom GoogleMap Markers & InfoWindow
 =====================================
 
-Custom marker, customize infowindow, different markers, add navigation for map both mobile and desktop. 
+Custom marker, customize and style infowindow with CSS3 (Be creative using Transitions, Animations etc.), different markers, add navigation for Google Map both mobile and desktop. 
 
-Libraries used: 
+Credits: 
+=========
 
-• google infobox.js
-• google maps API V3
+• Google infobox.js
+• Google Maps API V3
 • jQuery
